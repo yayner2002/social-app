@@ -1,15 +1,24 @@
-import React from 'react'
-import UsersList from '../components/UsersList'
+import React from "react";
+import UsersList from "../components/UsersList";
 
 const Users = () => {
   const USERS = [
-    {id: 'u1', name: 'Max Schwarz', image: 'https://images.unsplash.com/photo-1593642532972-7d3a1b3a4d8c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVkaWElMjBtYW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', places: 3},
-    {id: 'u2', name: 'Max Schwarz', image: 'https://images.unsplash.com/photo-1593642532972-7d3a1b3a4d8c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVkaWElMjBtYW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', places: 3}
+    {
+      id: "u1",
+      name: "Yayner M",
+      image:
+        "https://images.unsplash.com/photo-1669654666989-d964d15faacc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      places: 3,
+    },
+    {
+      id: "u2",
+      name: "Max Schwarz",
+      image:
+        "https://images.unsplash.com/photo-1669654666989-d964d15faacc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      places: 2,
+    },
+  ];
+  return <UsersList items={USERS} />;
+};
 
-  ]
-  return (
-    <UsersList items = {USERS}/>
-  )
-}
-
-export default Users
+export default Users;
