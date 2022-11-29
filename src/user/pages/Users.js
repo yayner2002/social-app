@@ -12,10 +12,10 @@ const Users = () => {
     },
     {
       id: "u2",
-      name: "Max Schwarz",
+      name: "Kidu Tinsae",
       image:
         "https://images.unsplash.com/photo-1669654666989-d964d15faacc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      places: 2,
+      places: 1,
     },
   ];
   return <UsersList items={USERS} />;
