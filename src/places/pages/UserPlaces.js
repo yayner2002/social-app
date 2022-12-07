@@ -21,7 +21,7 @@ const UserPlaces = () => {
     },
     {
       id: "p2",
-      title: "Empire State Building",
+      title: "XYZ State Building",
       description: "One of the most famous sky scrapers in the world!",
       imageUrl:
         "https://upload.wikimedia.org/wikipedia/commons/1/10/Empire_State_Building_%28aerial_view%29.jpg",
