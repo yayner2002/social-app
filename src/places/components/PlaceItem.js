@@ -36,6 +36,7 @@ const PlaceItem = (props) => {
               onClick={() => {
                 console.log("Deleting...");
                 setShowModalWarning(false);
+                window.location.replace('/')
               }}
             >
               Delete
@@ -47,7 +48,7 @@ const PlaceItem = (props) => {
         }
       >
         <p>
-          Are you sure i wanted to delete this item? Please note that this can't
+          Are you sure you wanted to delete this item? Please note that this can't
           be undone thereafter.
         </p>
       </Modal>
