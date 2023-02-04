@@ -1,48 +1,16 @@
-import React, { useRef, useEffect, useState } from "react";
-import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import "./Map.css";
-import  "mapbox-gl/dist/mapbox-gl.css";
+import React from 'react'
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoieWF5bmVyIiwiYSI6ImNsYjY5YXp6ZzAycWwzc3BranZtNzJjMjkifQ.3Gqov8CRvDTXwaGDkiSFOQ";
+import './Map.css';
 
-const Map = (props) => {
-  const mapContainer = useRef(null);
-  const map = useRef(null);
-  const { center } = props;
-  const [lng, setLng] = useState(center.lng);
-  const [lat, setLat] = useState(center.lat);
-  const [zoom, setZoom] = useState(props.zoom);
+const Map = () => {
 
-  useEffect(() => {
-    if (map.current) return; // initialize map only once
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v12",
-      center: [lng, lat],
-      zoom: zoom,
-    });
-  });
-
-  useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
-    map.current.on("move", () => {
-      setLng(map.current.getCenter().lng.toFixed(4));
-      setLat(map.current.getCenter().lat.toFixed(4));
-      setZoom(map.current.getZoom().toFixed(2));
-    });
-  });
   return (
-    <>
-      <div className="sidebar">
-        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-      </div>
-      <div
-        ref={mapContainer}
-        className={`map ${props.className}`}
-        style={props.style}
-      ></div>
-    </>
+    <div
+      className="map"
+    >
+      <iframe width="100%" title='addis ababa map' height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=Bole,%20Ring%20Road%20Airport%20Street%20Addis%20Ababa+(Addis%20Ababa)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+
+    </div>
   );
 };
 

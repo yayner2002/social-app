@@ -9,7 +9,6 @@
 .place-item__info {
   padding: 1rem;
   text-align: center;
-  background: #fff;
 }
 
 .place-item__image {
@@ -34,7 +33,6 @@
   padding: 1rem;
   text-align: center;
   border-top: 1px solid #ccc;
-  background: #fff;
 }
 
 .place-item__modal-content {
@@ -49,9 +47,10 @@
 .place-item__actions a {
   margin: 0.5rem;
 }
+
 .map-container {
-  width: 100%;
   height: 15rem;
+  width: 100%;
 }
 
 @media (min-width: 768px) {

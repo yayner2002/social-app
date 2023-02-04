@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose").set('strictQuery', false);
-require("dotenv").config();
+const mongoose = require("mongoose");
 
 const placesRoutes = require("./routes/places-routes");
 const usersRoutes = require("./routes/users-routes");
@@ -10,6 +9,17 @@ const HttpError = require("./models/http-error");
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
+
+  next();
+});
 
 app.use("/api/places", placesRoutes);
 app.use("/api/users", usersRoutes);
@@ -28,12 +38,14 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(process.env.DATABASE_ACCESS)
+  .connect(
+    `mongodb+srv://yayner:ya1ya2ya3@mflix.yflmj.mongodb.net/mern?retryWrites=true&w=majority`
+  )
   .then(() => {
-    app.listen(6000, () => {
-      console.log("DB connected and server is running on port 6000");
+    app.listen(5000, () => {
+      console.log("Server started on port 5000");
     });
   })
-  .catch((error) => {
-    console.log(error);
+  .catch((err) => {
+    console.log(err);
   });

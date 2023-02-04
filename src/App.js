@@ -1,23 +1,26 @@
-import React, { useCallback, useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
   BrowserRouter as Router,
-  Navigate,
   Route,
   Routes,
+  Navigate,
 } from "react-router-dom";
+
+import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
-import UpdatePlace from "./places/pages/UpdatePlace";
 import UserPlaces from "./places/pages/UserPlaces";
+import UpdatePlace from "./places/pages/UpdatePlace";
+import Auth from "./user/pages/Auth";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import { AuthContext } from "./shared/context/auth-context";
-import Auth from "./user/pages/Auth";
-import Users from "./user/pages/Users";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState(null);
 
-  const login = useCallback(() => {
+  const login = useCallback((uid) => {
     setIsLoggedIn(true);
+    setUserId(uid);
   }, []);
 
   const logout = useCallback(() => {
@@ -29,7 +32,7 @@ const App = () => {
     routes = (
       <Routes>
         <Route path="/" element={<Users />} />
-        <Route path="/:userID/places" element={<UserPlaces />} />
+        <Route path="/:uid/places" element={<UserPlaces />} />
         <Route path="/places/new" element={<NewPlace />} />
         <Route path="/places/:placeId" element={<UpdatePlace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
@@ -39,7 +42,7 @@ const App = () => {
     routes = (
       <Routes>
         <Route path="/" element={<Users />} />
-        <Route path="/:userID/places" element={<UserPlaces />} />
+        <Route path="/:uid/places" element={<UserPlaces />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="*" element={<Navigate to="/auth" replace />} />
       </Routes>
@@ -49,6 +52,7 @@ const App = () => {
     <AuthContext.Provider
       value={{
         isLoggedIn: isLoggedIn,
+        userId: userId,
         login: login,
         logout: logout,
       }}
