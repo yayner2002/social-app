@@ -73,6 +73,7 @@ const UpdatePlace = () => {
         }),
         {
           "Content-Type": "application/json",
+          Authorization: `Yayner ` + auth.token,
         }
       );
       navigate(`/${auth.userId}/places`, { replace: true });
