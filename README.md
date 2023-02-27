@@ -11,12 +11,8 @@
 
 ## Screenshot
 ![mockup](public/Place-app-screenshot.png?raw=true "mockup")
-## Live Demo
-[Live Demo Link](https://yay-places-app.web.app/)
-
 ## Live Demo Link
-
-comming soon
+[Live Demo Link](https://yay-places-app.web.app/)
 
 ## Getting Started
 
