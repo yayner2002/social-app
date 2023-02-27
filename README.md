@@ -1,7 +1,5 @@
 # Social web app
-
-.
-
+An app that has Authentication, authorization, and File upload services that enable users to add, update, delete places visited and view it on map.
 ## Built With
 
 - ReactJS
