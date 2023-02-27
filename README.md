@@ -4,14 +4,15 @@
 
 ## Built With
 
-- React
-- Express
+- ReactJS
+- ExpressJS
 - MongoDB
-- NodeJs
+- NodeJS
 
 ## Screenshot
-
-comming soon
+![mockup](public/Place-app-screenshot.png?raw=true "mockup")
+## Live Demo
+[Live Demo Link](https://yay-places-app.web.app/)
 
 ## Live Demo Link
 
